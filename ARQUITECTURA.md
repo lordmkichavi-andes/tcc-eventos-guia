@@ -8,6 +8,10 @@ En temporadas pico, el volumen de eventos de guías (estados, novedades, notific
 
 ## Diseño propuesto
 
+![Arquitectura de la solución](docs/arquitectura.png)
+
+Versión editable (Mermaid):
+
 ```mermaid
 flowchart LR
     subgraph Origen
@@ -124,4 +128,4 @@ commit → build + tests → imagen Docker → deploy staging → smoke tests �
 
 ## Qué incluye este repositorio (ejercicio previo)
 
-Solo la **capa de ingesta**: API REST + publicación a RabbitMQ + pruebas + documentación. Es la base para extender con consumidores, idempotencia completa y despliegue en la sesión en vivo.
+La **capa de ingesta**: API REST + publicación a RabbitMQ + pruebas (unitarias y smoke tests end-to-end) + documentación. Todo ejecutable con solo Docker (`docker compose up -d --build`): la app se compila dentro de la imagen (build multi-stage) — la misma imagen que alimentaría el pipeline de CI/CD descrito arriba. Es la base para extender con consumidores e idempotencia completa en la sesión en vivo.

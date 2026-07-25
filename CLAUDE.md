@@ -12,8 +12,9 @@ Maven, Java 17.
 
 Common commands:
 ```
-docker compose up -d          # start RabbitMQ locally
-mvn spring-boot:run           # run the API
+docker compose up -d --build  # run everything (RabbitMQ + API) in Docker
+docker compose up -d rabbitmq # start only RabbitMQ (for local dev)
+mvn spring-boot:run           # run the API locally
 mvn test                      # run tests
 mvn package                   # build jar
 ```

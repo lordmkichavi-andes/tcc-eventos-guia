@@ -73,4 +73,13 @@ class EventoGuiaControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.error").value("Solicitud inválida"));
     }
+
+    @Test
+    void debeRechazarJsonMalformadoCon400() throws Exception {
+        mockMvc.perform(post("/api/v1/eventos/guia")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{esto no es json"))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.error").value("Solicitud inválida"));
+    }
 }
