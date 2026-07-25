@@ -40,3 +40,11 @@ build/
 ### Local ###
 .idea/
 .claude/
+
+### Solo local — no publicar (documentación personal y enunciado) ###
+README.md
+ARQUITECTURA.md
+CLAUDE.md
+BITACORA_SESION.md
+CUMPLIMIENTO_PRUEBA.md
+PruebaTecnica_*.pdf
